@@ -19,9 +19,9 @@ public class ProxyService extends HttpServlet {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 		
-		UriComponentsBuilder builder = (String)request.getQueryString();
+		UriComponentsBuilder builder = request.();
 		
-		HttpEntity<?> entity = new HttpEntity<>(headers);
+		HttpEntity<String> entity = new HttpEntity<>(headers);
 		
 		RestTemplate template = new RestTemplate();
 		HttpEntity<String> templateResponse = template.exchange(
@@ -29,6 +29,8 @@ public class ProxyService extends HttpServlet {
 		        HttpMethod.GET, 
 		        entity, 
 		        String.class);
+		//research responesEntity
+		
 	}
 	
 }
